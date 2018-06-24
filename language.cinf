@@ -1,0 +1,1300 @@
+;===================================================================================================
+;
+;                                      Localization File
+;
+;===================================================================================================
+;
+; How to localize:
+;   1. Specify font name at the [System] section in this file.
+;   2. Translate all text at the [Strings] section in this file.
+;   3. Save this file as "language.conf" by UTF16-LE.
+;   4. Locate "language.conf" in the same folder as "sai.exe". 
+;
+; Notice:
+;   SAI is non-Unicode program. 
+;   Strings will be garbled when language in "language.conf" differ from Windows.
+;   (If "language.conf" is English when strings always display correctly.)
+;
+;   Ex)
+;     Windows is English version but "language.conf" is Japanese. -> Strings will be garbled.
+;     In this case, please change [Language for non-Unicode programs].
+;
+;       1. Open [Regional and Language Settings] control panel.
+;       2. Open [Advanced] tab.
+;       3. Select "Japanese" by [Language for non-Unicode programs] drop down list box.
+;
+
+[System]
+;===================================================================================================
+;                                       Font settings
+;===================================================================================================
+;			  WD, HT, FaceName
+FontCaption			=  0, 16, "微软正黑體"
+FontFixedPitch			=  0, 16, "微软正黑體"
+FontVariablePitch		=  0, 16, "微软正黑體"
+FontFixedPitchSmall		=  5, 10, "微软正黑體"
+FontVariablePitchSmall		=  0, 15, "微软正黑體"
+
+;===================================================================================================
+;                                       Help settings
+;===================================================================================================
+HelpFile			= "help.chm"
+
+[Strings]
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                        Version 1.2.0-Beta.5
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+FileView_BtnBkmGotoTar		= "",		"在文件夹實際的位置展开"
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                        Version 1.2.0-Beta.1
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Sai_MemInfo			= "内存负载率:%d%% (确保%dMB/上限%dMB) "
+Dlg_FnamDenyChars		= "无法使用下列字元： \\ / : * ? \" < > |"
+
+ExtFilter_Sai			= "SAI (*.sai)"
+ExtFilter_Photoshop		= "Photoshop PSD (*.psd)"
+ExtFilter_Bitmap		= "Bitmap (*.bmp)"
+ExtFilter_Jpeg			= "JPEG (*.jpg *.jpeg)"
+ExtFilter_Png			= "PNG (*.png)"
+ExtFilter_Targa			= "TARGA (*.tga)"
+ExtFilter_All			= "全部 (*.*)"
+
+FileView_Ext			= "存储格式："
+FileView_DlgDirName		= "重新命名资料夾"
+FileView_DlgFileName		= "重新命名文件"
+
+DlgDirName_Name			= "名称"
+DlgDirName_Ok			= "OK"
+DlgDirName_Cancel		= "取消"
+DlgFileName_Name		= "名称"
+DlgFileName_Ext			= "副文件名(无法修改)"
+DlgFileName_Ok			= "OK"
+DlgFileName_Cancel		= "取消"
+
+Error_SysError			= "发生了下列错误、%s。\n\n错误编辑：%d\n错误信息：%s"
+Error_AddBkm			= "无法在同一個階层中标注已存在的文件夹"
+Error_AddBkmName		= "有同名的书籤项目存在"
+Error_TooManyFiles		= "无法同时开放十个以上的档案"
+Error_MakeDir			= "无法建立资料夾"
+
+;
+; Modified entry:
+;	ExtFilter_Default
+;	FileView_Name
+;	FileView_Type
+;	FileView_BtnBkmRename
+;	FileView_BtnBkmDelete
+;	FileView_DlgBkmAdd
+;	FileView_DlgBkmRename
+;	FileView_AskBkmDelete
+;
+; Deleted entry:
+;	FileView_DlgRename
+;
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                        Version 1.2.0-Alpha.1
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Error_SetupNeedAdminNT		= "您在这台电脑的使用者權限可能无法允許您进行软件的安裝，请依照这裡提供的方式启动 SAI 。\n\n - 请以系統管理者的帳号登入，并启动 SAI\n\n - 在桌面上的「Paint tool SAI Ver.1」或 sai.exe 点击右键，选择「執行身份…」，然后指定系統管理者的帳号"
+Error_SetupNeedAdminVista	= "您在这台电脑的使用者權限可能无法允許您进行软件的安裝，请依照这裡提供的方式启动 SAI 。\n\n - 以系統管理員的帳号登入然后启动 SAI\n\n - 在桌面上的「Paint tool SAI Ver.1」或 sai.exe 按击右键，选择「以系統管理者的身份執行」"
+Error_TransformConcave		= "无法进行弧狀的变形"
+Error_FPUControl		= "有些時候， SAI 会因为某些以非常規的方式撰写的程序造成浮点運算模式的变更而无法正常執行。\n请将会造成問題的程序关闭或者是反安裝。\n附註、 SAI 无法偵測何者才是会造成問題的程序、只能人为判斷。"
+
+; Modified entry:
+;
+;   Change printf format.
+;	Sai_Period
+;	Sai_Trial
+;
+;   Change access key.
+;	FileView_ThumbModeThumb		(&T) -> (&B)
+;	FileView_ThumbModeDetail	(&D) -> (&L)
+;	FileView_ThumbSortByTime	(&L) -> (&T)
+;	FileView_ThumbSortByExtTime	(&M) -> (&I)
+;
+; Deleted entry:
+;	Error_SetupNeedAdmin
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                        Version 1.0.5b
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LayerFunc_FlattenImage		= "画像整合"
+LayerMenu_FlattenImage		= "画像整合(&F)"
+
+WindowFunc_FullScreen		= "全屏幕显示"
+WindowMenu_FullScreen		= "全屏幕显示(&F)"
+
+ViewFunc_Prev			= "选择前一個显示画面"
+ViewFunc_Next			= "选择后一個显示画面"
+
+; Modified entry:
+;
+;   Change access key.
+;	LayerMenu_Transfer	(&F) -> (&R)
+;	WindowMenu_HidePanel	(&F) -> (&E)
+;
+; Deleted entry:
+;	DlgOptTool_SyrGrp
+;	DlgOptTool_SyrSrc
+;
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                        Version 1.0.4
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LayerFunc_MergeVisible		= "整合显示中的图层"
+LayerFunc_LockAlpha		= "锁定图层不透明度"
+LayerFunc_ClipGroup		= "套用下方图层为遮罩"
+LayerFunc_Show			= "图层的显示／非显示"
+LayerFunc_ShowMarked		= "目前所在之标定群組的显示／非显示"
+LayerFunc_ShowLone		= "只显示目前编辑的这个图层"
+LayerFunc_ShowLoneMarked	= "僅显示目前所在之标定群組"
+
+LayerMenu_MergeVisible		= "整合显示的图层(&C)"
+
+Layer_ShowPaintEff		= "画材效果",			"素材效果选项的的显示／不显示"
+
+Syringe_Source			= "取色的目标",		"选择抓取颜色的目标"
+
+DlgBmpOpt_Title			= "BMP存檔选项"
+DlgBmpOpt_PixFmt		= "像素格式"
+DlgBmpOpt_RGB24			= "24bpp RGB"
+DlgBmpOpt_RGB32			= "32bpp RGB"
+DlgBmpOpt_ARGB32		= "32bpp ARGB（含透明度信息）"
+
+DlgPngOpt_Title			= "PNG存檔选项"
+DlgPngOpt_PixFmt		= "像素格式"
+DlgPngOpt_RGB24			= "24bpp RGB"
+DlgPngOpt_ARGB32		= "32bpp ARGB（含透明度信息）"
+
+; Modified entry:
+;
+;   Change access key.
+;	LayerMenu_Duplicate	(&D) -> (&C)
+;	LayerMenu_Remove	(&R) -> (&D)
+;	LayerMenu_MergeLay	(&C) -> (&M)
+;	LayerMenu_MergeFol	(&C) -> (&M)
+;	LayerMenu_Fill		(&P) -> (&L)
+;	LayerMenu_InvHorz	(&H) -> <Delete>
+;	LayerMenu_InvVert	(&V) -> <Delete>
+;	LayerMenu_RotCCW	(&U) -> <Delete>
+;	LayerMenu_RotCW		(&K) -> <Delete>
+;	LayerMenu_Rename	(&M) -> (&P)
+;
+;   Rename key name.
+;	DlgJpegSave_????	-> DlgJpgSave_????
+;	DlgJpegOpt_????		-> DlgJpgOpt_????
+;
+; Deleted entry:
+;	Syringe_Usage
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                        Version 1.0.3
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ColorCircle_Mode		= "",				"切换色环或 HSV 选色器模式"
+
+; Deleted entry:
+;	WindowFunc_HSLMode
+;	WindowMenu_HSLMode
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                        Version 1.0.2
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BlendMode_Sub			= "线性加深/阴影"
+BlendMode_AddSub		= "线性光源/明暗"
+
+Warn_TrialExpired		= "本软件试用階段已经到期了，若您希望继续使用的話，请购买本软件。"
+
+Error_SystemID			= "User license 內指定的系統 ID 与这台电脑的不符。\n\n User license 內设定的系統 ID 是： %08X\n 而这台电脑的系統 ID 是： %08X"
+
+DlgSysID_Guide			= "系統 ID 是下載 User license 檔時使用，用來辨識这台电脑的一組文字"
+
+; Modified entry:
+;	BlendMode_Add
+;	DlgSysID_Ok
+;
+; Deleted entry:
+;	Error_UserAccount
+;	Error_Internal
+;	DlgAdmin_Title
+;	DlgAdmin_Guide
+;	DlgAdmin_Username
+;	DlgAdmin_Password
+;	DlgAdmin_Ok
+;	DlgAdmin_Cancel
+;
+
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+;                                       Version 1.0.1
+;////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+;===================================================================================================
+;                                       Miscellaneous
+;===================================================================================================
+Sai_Title			= "Paint Tool SAI"
+Sai_Version			= ""
+Sai_DegreeSign			= "°"
+Sai_PlusMinusSign		= "±"
+Sai_None			= "无"
+Sai_Period			= "%s: 试用期结束"
+Sai_Trial			= "%s: 已试用%d日"
+Sai_NotSaved			= "(未保存)"
+Sai_MemInfoNT			= "内存负载率:%d%% (已用%dMB/%dMB确保) "
+Sai_MemInfo9x			= "内存负载率:%d%% (%dMB确保) "
+Sai_PanelNavigator		= "预览器"
+Sai_PanelLayer			= "图层"
+Sai_PanelColor			= "色彩"
+Sai_PanelTool			= "工具"
+
+;===================================================================================================
+;                                   Edit box context menu
+;===================================================================================================
+SflEditBox_Undo			= "还原 (&U)"
+SflEditBox_Cut			= "剪下 (&T)"
+SflEditBox_Copy			= "复制 (&C)"
+SflEditBox_Paste		= "贴上 (&P)"
+SflEditBox_Delete		= "清除 (&D)"
+SflEditBox_SelectAll		= "选择全部 (&A)"
+
+;===================================================================================================
+;                             Shortcut key configration dialog 快速键设定窗口
+;===================================================================================================
+; Categories
+FuncCat_File			= "文件"
+FuncCat_Edit			= "编辑"
+FuncCat_Canvas			= "画布"
+FuncCat_Layer			= "图层"
+FuncCat_LayMask			= "图层遮罩"
+FuncCat_Selection		= "选择范围"
+FuncCat_Filter			= "滤镜"
+FuncCat_View			= "视图"
+FuncCat_Window			= "窗口"
+FuncCat_Etc			= "其他"
+FuncCat_Color			= "色彩"
+FuncCat_Brush			= "笔刷工具"
+
+; "File" functions
+FileFunc_New			= "建立新画布"
+FileFunc_Open			= "开放布文件"
+FileFunc_OpenCB			= "从剪贴板建立画布"
+FileFunc_Save			= "保存文件"
+FileFunc_SaveAs			= "另存新檔"
+FileFunc_FVOpen			= "以文件显示器开启"
+FileFunc_FVSave			= "以文件显示器保存"
+FileFunc_Close			= "关闭画布"
+FileFunc_Quit			= "離开程序"
+
+FileFunc_ExportSai		= "输出为 .sai (SAI)"
+FileFunc_ExportPsd		= "输出为 .psd (Photoshop)"
+FileFunc_ExportBmp		= "输出为 .bmp (Bitmap)"
+FileFunc_ExportJpg		= "输出为 .jpg (JPEG)"
+FileFunc_ExportPng		= "输出为 .png (PNG)"
+FileFunc_ExportTga		= "输出为 .tga (TARGA)"
+
+; "Edit" functions
+EditFunc_Undo			= "还原"
+EditFunc_Redo			= "重做"
+EditFunc_Copy			= "复制"
+EditFunc_Cut			= "剪下"
+EditFunc_Paste			= "贴上"
+EditFunc_CopySelRect		= "复制选择范围"
+
+; "Canvas" functions
+CanvasFunc_Reso			= "画布尺寸"
+CanvasFunc_Size			= "版面尺寸"
+CanvasFunc_Trim			= "以选择范围裁切画布"
+CanvasFunc_InvHorz		= "水平翻转画布"
+CanvasFunc_InvVert		= "垂直翻转画布"
+CanvasFunc_RotCCW		= "逆时针90度旋转画布"
+CanvasFunc_RotCW		= "顺时针90度旋转画布"
+
+; "Layer" functions
+LayerFunc_NewCol		= "新增图层"
+LayerFunc_NewInk		= "新增线稿图层"
+LayerFunc_NewFol		= "建立图层群組"
+LayerFunc_Duplicate		= "复制图层"
+LayerFunc_Remove		= "刪除图层"
+LayerFunc_Erase			= "清空图层"
+LayerFunc_Transfer		= "向下转写"
+LayerFunc_Merge			= "向下合并图层/整合图层群組"
+LayerFunc_Fill			= "填滿图层"
+LayerFunc_Rasterize		= "将线稿图层点阵化"
+LayerFunc_ResetPrs		= "重置所有笔画粗細"
+LayerFunc_Lum2Alpha		= "将亮度转换成透明度"
+LayerFunc_Transform		= "自由变形"
+LayerFunc_InvHorz		= "水平翻转图层"
+LayerFunc_InvVert		= "垂直翻转图层"
+LayerFunc_RotCCW		= "逆时针90度旋转图层"
+LayerFunc_RotCW			= "顺时针90度旋转图层"
+LayerFunc_Rename		= "重新命名图层"
+
+; "Layer mask" functions
+LayMaskFunc_New			= "建立图层遮罩"
+LayMaskFunc_MergeSep		= "向下分別合并图层与遮罩"
+LayMaskFunc_Apply		= "以遮罩裁切图层"
+
+; "Selection" functions
+SelectionFunc_Erase		= "取消选择范围"
+SelectionFunc_Invert		= "反转选择范围"
+SelectionFunc_Show		= "显示选择范围"
+SelectionFunc_Expand1		= "擴大选择范围 1 像素"
+SelectionFunc_SelCP		= "选取选择范围內的节点"
+SelectionFunc_SelStroke		= "选取与选择范围重疊的笔画"
+SelectionFunc_ClrSelCP		= "取消选择的节点"
+SelectionFunc_SelectAll		= "全选"
+
+; "Filter" functions
+FilterFunc_HueSatVal		= "调整色相/飽和度"
+FilterFunc_Contrast		= "调整亮度/對比度"
+
+; "View" functions
+ViewFunc_New			= "新的显示画面"
+ViewFunc_Close			= "关闭显示画面"
+ViewFunc_CloseAll		= "关闭全部的显示画面"
+ViewFunc_ZoomIn			= "放大"
+ViewFunc_ZoomOut		= "缩小"
+ViewFunc_ZoomInCurPos		= "以游标为中心放大"
+ViewFunc_ZoomOutCurPos		= "以游标为中心缩小"
+ViewFunc_InvHorz		= "水平翻转画面"
+ViewFunc_RotCCW			= "逆时针旋转画面"
+ViewFunc_RotCW			= "顺时针旋转画面"
+ViewFunc_HomePos100		= "显示100％的画面"
+ViewFunc_HomePos		= "缩放到整張画布"
+ViewFunc_ResetRot		= "重置旋转角度"
+ViewFunc_Select			= "从清單中选择显示画面"
+ViewFunc_SelectNo1		= "选择显示画面 1号"
+ViewFunc_SelectNo2		= "选择显示画面 2号"
+ViewFunc_SelectNo3		= "选择显示画面 3号"
+ViewFunc_SelectNo4		= "选择显示画面 4号"
+ViewFunc_SelectNo5		= "选择显示画面 5号"
+ViewFunc_SelectNo6		= "选择显示画面 6号"
+ViewFunc_SelectNo7		= "选择显示画面 7号"
+ViewFunc_SelectNo8		= "选择显示画面 8号"
+ViewFunc_SelectNo9		= "选择显示画面 9号"
+ViewFunc_SelectNo10		= "选择显示画面 10号"
+
+; "Window" functions
+WindowFunc_ColCircle		= "色环"
+WindowFunc_RGBSlider		= "RGB选色器"
+WindowFunc_HSVSlider		= "HSV选色器"
+WindowFunc_ColMixer		= "混色器"
+WindowFunc_Swatch		= "自訂色票"
+WindowFunc_ScratchPad		= "調色盤"
+WindowFunc_Navigator		= "预览器"
+WindowFunc_QuickBar		= "快捷列"
+WindowFunc_ViewSelBar		= "显示列"
+WindowFunc_StatusBar		= "状态列"
+WindowFunc_BrushCircle		= "游标显示笔刷尺寸"
+WindowFunc_DotCursor		= "游标中心显示圓点"
+WindowFunc_HidePanel		= "隐藏功能面板"
+WindowFunc_LayNaviRight		= "图层相關面板显示在右边"
+WindowFunc_ColToolRight		= "颜色与工具面板显示在右边"
+
+; "Etceteras" functions
+EtcFunc_ContextHelp		= "显示游标所指位置的的说明"
+EtcFunc_Help			= "显示说明"
+EtcFunc_KeyConfig		= "快速键设定"
+EtcFunc_Option			= "选项"
+
+; "Color" functions
+ColorFunc_XchgColor		= "切换主颜色和副颜色"
+ColorFunc_XchgTrans		= "切换前景色为透明色"
+ColorFunc_SyringeCanvas		= "从整個画布抓取颜色"
+ColorFunc_SyringeLayer		= "从编辑中的图层取色"
+
+; "Brush tool" functions
+BrushFunc_SizeUp		= "选择大一号的笔刷"
+BrushFunc_SizeDown		= "选择小一号的笔刷"
+BrushFunc_Density10		= "笔刷浓度10%"
+BrushFunc_Density20		= "笔刷浓度20%"
+BrushFunc_Density30		= "笔刷浓度30%"
+BrushFunc_Density40		= "笔刷浓度40%"
+BrushFunc_Density50		= "笔刷浓度50%"
+BrushFunc_Density60		= "笔刷浓度60%"
+BrushFunc_Density70		= "笔刷浓度70%"
+BrushFunc_Density80		= "笔刷浓度80%"
+BrushFunc_Density90		= "笔刷浓度90%"
+BrushFunc_Density100		= "笔刷浓度100%"
+
+;===================================================================================================
+;                                            Menus
+;===================================================================================================
+
+; Menu bar
+Menu_File			= "文件(&F)"
+Menu_Edit			= "编辑(&E)"
+Menu_Canvas			= "画布(&C)"
+Menu_Layer			= "图层(&L)"
+Menu_Selection			= "选择范围(&S)"
+Menu_Filter			= "滤镜(&T)"
+Menu_View			= "显示(&V)"
+Menu_Window			= "窗口(&W)"
+Menu_Etc			= "其他(&O)"
+
+; System menu extention
+SysMenu_InitWinPos		= "还原所有對話框的预设位置(&I)"
+
+; "File" menu
+FileMenu_New			= "建立新画布(&N)"
+FileMenu_Open			= "开启画布文件(&O)"
+FileMenu_OpenCB			= "从剪贴板建立画布(&B)"
+FileMenu_Save			= "保存文件(&S)"
+FileMenu_SaveAs			= "画布另存新檔(&A)"
+FileMenu_Export			= "输出为指定格式的文件(&E)"
+FileMenu_FVEnable		= "固定使用图像显示器(&V)"
+FileMenu_FVOpen			= "透过图像显示器开启(&F)"
+FileMenu_FVSave			= "透过图像显示器保存(&L)"
+FileMenu_Recent			= "最近使用的文件(&R)"
+FileMenu_Close			= "关闭画布(&C)"
+FileMenu_Quit			= "关闭程序(&X)"
+
+; "Edit" menu
+EditMenu_Undo			= "还原(&U)"
+EditMenu_Redo			= "重做(&R)"
+EditMenu_Copy			= "复制(&C)"
+EditMenu_Cut			= "剪下(&X)"
+EditMenu_Paste			= "贴上(&P)"
+EditMenu_CopySelRect		= "复制选择范围(&S)"
+
+; "Canvas" menu
+CanvasMenu_Reso			= "画布尺寸(&R)"
+CanvasMenu_Size			= "版面尺寸(&S) "
+CanvasMenu_Trim			= "以选择范围裁切(&T)"
+CanvasMenu_InvHorz		= "水平翻转画布(&H)"
+CanvasMenu_InvVert		= "垂直翻转画布(&V)"
+CanvasMenu_RotCCW		= "逆时针90度旋转画布(&U)"
+CanvasMenu_RotCW		= "顺时针90度旋转画布(&K)"
+
+; "Layer" menu
+LayerMenu_NewCol		= "新增图层(&N)"
+LayerMenu_NewInk		= "新增线稿图层(&I)"
+LayerMenu_NewFol		= "建立图层群組(&S)"
+LayerMenu_Duplicate		= "复制图层(&C)"
+LayerMenu_Remove		= "刪除图层(&D)"
+LayerMenu_Erase			= "清空图层(&E)"
+LayerMenu_Transfer		= "向下转写(&R)"
+LayerMenu_MergeLay		= "向下合并(&M)"
+LayerMenu_MergeFol		= "合并图层群組(&M)"
+LayerMenu_Fill			= "填滿图层(&L)"
+LayerMenu_Rasterize		= "将线稿图层点阵化(&Z)"
+LayerMenu_ResetPrs		= "重置笔画粗細(&A)"
+LayerMenu_Lum2Alpha		= "将亮度转换为透明度(&O)"
+LayerMenu_Transform		= "自由变形(&T)"
+LayerMenu_InvHorz		= "水平翻转图层"
+LayerMenu_InvVert		= "垂直翻转图层"
+LayerMenu_RotCCW		= "逆时针90度旋转图层"
+LayerMenu_RotCW			= "顺时针90度旋转图层"
+LayerMenu_Rename		= "重新命名图层(&P)"
+
+; "Selection" menu
+SelectionMenu_Erase		= "取消选择范围(&D)"
+SelectionMenu_Invert		= "反转选择范围(&I)"
+SelectionMenu_Show		= "显示选择范围(&V)"
+SelectionMenu_Expand1		= "擴大选择范围1像素(&1)"
+SelectionMenu_SelCP		= "选取选择范围內节点(&P)"
+SelectionMenu_SelStroke		= "选取与选择范围重疊的笔画(&T)"
+SelectionMenu_ClrSelCP		= "取消所有选择的节点(&L)"
+SelectionMenu_SelectAll		= "全选(&A)"
+
+; "Filter" menu
+FilterMenu_HueSatVal		= "调整色相/飽和度(&H) "
+FilterMenu_Contrast		= "调整亮度/對比度(&C) "
+
+; "View" menu
+ViewMenu_New			= "建立新的显示画面(&N)"
+ViewMenu_Close			= "关闭显示画面(&C)"
+ViewMenu_CloseAll		= "关闭全部的显示画面(&X)"
+ViewMenu_ZoomIn			= "放大(&I)"
+ViewMenu_ZoomOut		= "缩小(&O)"
+ViewMenu_InvHorz		= "水平翻转(&H)"
+ViewMenu_RotCCW			= "逆时针旋转(&L)"
+ViewMenu_RotCW			= "顺时针旋转(&R)"
+ViewMenu_HomePos100		= "显示100％的画面(&A)"
+ViewMenu_HomePos		= "重置缩放程度(&F)"
+ViewMenu_ResetRot		= "重置旋转角度(&F)"
+ViewMenu_Select			= "从清單中选择显示画面(&V)"
+
+; "Window" menu
+WindowMenu_ColCircle		= "色环(&C)"
+WindowMenu_RGBSlider		= "RGB选色器(&R)"
+WindowMenu_HSVSlider		= "HSV选色器(&H)"
+WindowMenu_ColMixer		= "混色器(&G)"
+WindowMenu_Swatch		= "自訂色票(&P)"
+WindowMenu_ScratchPad		= "調色盤(&S)"
+WindowMenu_Navigator		= "预览器(&N)"
+WindowMenu_QuickBar		= "快捷列(&Q)"
+WindowMenu_ViewSelBar		= "显示列(&B)"
+WindowMenu_StatusBar		= "状态列(&U)"
+WindowMenu_BrushCircle		= "游标显示笔刷尺寸(&Z)"
+WindowMenu_DotCursor		= "游标中心显示圓点(&D)"
+WindowMenu_HidePanel		= "隐藏控制面板(&E)"
+WindowMenu_LayNaviRight		= "图层相關面板显示在右边(&L)"
+WindowMenu_ColToolRight		= "颜色与工具面板显示在右边(&T)"
+
+; "Etceteras" menu
+EtcMenu_Help			= "师父救我啊！(&H)"
+EtcMenu_KeyConfig		= "快速键设定(&K)"
+EtcMenu_Option			= "选项(&O)"
+EtcMenu_SysID			= "系統 ID(&S) ..."
+EtcMenu_About			= "版本信息(&A)"
+
+;===================================================================================================
+;                                       Layer panel
+;===================================================================================================
+
+; Layer name
+LayPrefix_Layer			= "图层"
+LayPrefix_Mask			= "遮罩"
+LayPrefix_LineWork		= "线稿"
+LayPrefix_LayerSet		= "群組"
+
+; Layer option
+;				  UI strings			Tool-tips strings
+Layer_BlendMode			= "混合模式",			"选择图层混合模式"
+Layer_Opacity			= "不透明度",			"设定图层的不透明度"
+Layer_PaperTex			= "图层质材",			"选择應用到图层的质感贴图"
+Layer_PaperTexSc		= "倍率	%d%%",			"质感贴图的缩放率"
+Layer_PaperTexVal		= "強度\t%d",			"质感贴图效果的強度"
+Layer_PaintEff			= "素材效果",			"选择應用到图层的素材效果"
+Layer_PaintEffSz		= "程度\t%d",			"素材效果的程度"
+Layer_PaintEffVal		= "強度\t%d",			"素材效果的強度"
+Layer_LockAlpha			= "透明锁定",		"锁定图层各像素的不透明度"
+Layer_ClipGroup			= "以下层为遮罩",		"以下方图层的不透明度作为图层遮罩"
+Layer_SeedFillSrc		= "指定來源",		"设为魔术棒和油漆桶的选择來源"
+
+; Layer button
+Layer_NewCol			= "",				"新增图层"
+Layer_NewInk			= "",				"新增线稿图层"
+Layer_NewFol			= "",				"建立图层群組"
+Layer_NewMask			= "",				"建立图层遮罩"
+Layer_Transfer			= "",				"向下转写"
+Layer_MergeLay			= "",				"向下合并"
+Layer_MergeFol			= "",				"合并图层群組"
+Layer_Erase			= "",				"清空图层"
+Layer_Delete			= "",				"刪除图层"
+Layer_MergeKeepMask		= "",				"分別向下合并图层与遮罩"
+Layer_ApplyMask			= "",				"以遮罩裁切图层內容"
+
+; Paper texture / Paint effect
+PaperTex_None			= "【无质感】"
+PaintEff_None			= "【无效果】"
+PaintEff_Fringe			= "水彩境界"
+
+; Layer blend mode
+BlendMode_Pass			= "穿透"
+BlendMode_Normal		= "正常"
+BlendMode_Multiply		= "色彩增值/乘算"
+BlendMode_Screen		= "濾色/逆乘算"
+BlendMode_Add			= "线性加亮/加算"
+BlendMode_Overlay		= "覆盖/超乘算"
+BlendMode_ColBin		= "極色化"
+
+; Tool-tips of Layer listbox item
+LayerItem_Folder		= "",				"展开/收起图层群組"
+LayerItem_LayThumb		= "",				"图层缩图"
+LayerItem_MskThumb		= "",				"编辑遮罩（要返回编辑图层请点击缩图或图层名称附近）"
+LayerItem_LayShow		= "",				"切换图层的显示或隐藏"
+LayerItem_LayLink		= "",				"連结编辑中的图层，以便在移动、变形、滤镜效果時同時作用"
+LayerItem_MskShow		= "",				"以图层遮罩裁切图层內容"
+LayerItem_MskLink		= "",				"设定是否与图层同時移动、变形"
+LayerItem_LaySel		= "",				"表示图层编辑中的标記"
+LayerItem_MskSel		= "",				"表示图层遮罩编辑中的标記"
+
+; Indications of Layer listbox item
+LayerItem_IndLockAlpha		= "保護 "
+LayerItem_IndPaper		= "质感 "
+LayerItem_IndEffect		= "效果 "
+
+; Special layer name
+LayerItem_BackGround		= "背景"
+LayerItem_Floating		= "浮动"
+
+;===================================================================================================
+;                                       Color panel
+;===================================================================================================
+
+; Tool-tips of color panel on/off button
+ColBtn_ColorCircle		= "",				"色环 显示/隐藏"
+ColBtn_RGBSlider		= "",				"RGB选色器 显示/隐藏"
+ColBtn_HSVSlider		= "",				"HSV选色器 显示/隐藏"
+ColBtn_ColorMixer		= "",				"混色器 显示/隐藏"
+ColBtn_Swatch			= "",				"自訂色票 显示/隐藏"
+ColBtn_ScratchPad		= "",				"調色盤 显示/隐藏"
+
+; Tool-tips of color circle
+ColorCircle_Hue			= "",				"选择色相"
+ColorCircle_SatVal		= "",				"上下明度/左右飽和度"
+
+; Tool-tips of RGB slider
+RGBSlider_Red			= "",				"调整紅色"
+RGBSlider_Green			= "",				"调整綠色"
+RGBSlider_Blue			= "",				"调整藍色"
+
+; Tool-tips of HSV slider
+HSVSlider_Hue			= "",				"调整色相"
+HSVSlider_Saturation		= "",				"调整飽和度"
+HSVSlider_Value			= "",				"调整明度"
+
+; Tool-tips of color mixer
+ColorMixer_Set			= "",				"设定颜色"
+ColorMixer_Get			= "",				"取得中間色"
+
+; Tool-tips of swatch
+SwatchMenu_Cancel		= "取消(&X)"
+SwatchMenu_Set			= "新增色票(&S)"
+SwatchMenu_Remove		= "刪除色票(&R)"
+
+; Tool-tips of scratch pad
+ScratchPad_Undo			= "",				"还原（調色盤）"
+ScratchPad_Redo			= "",				"重作（調色盤）"
+ScratchPad_Erase		= "",				"清除（調色盤）"
+
+; Tool-tips of color
+Color_ToggleColor		= "",				"主颜色和副颜色切换"
+Color_ToggleTrans		= "",				"一般颜色与透明色切换"
+Color_DefaultColor		= "",				"主颜色"
+Color_SecondColor		= "",				"副颜色 "
+
+;===================================================================================================
+;                                         Quick bar
+;===================================================================================================
+
+Quick_Undo			= "",				"还原"
+Quick_Redo			= "",				"重做"
+Quick_SelErase			= "",				"取消选择范围"
+Quick_SelInvert			= "",				"反转选择范围"
+Quick_SelShow			= "显示选择范围",		"设定显示或隐藏选择范围"
+Quick_Scale			= "缩放倍率",			"设定显示的缩放倍率"
+Quick_ZoomIn			= "",				"放大显示"
+Quick_ZoomOut			= "",				"缩小显示"
+Quick_Home			= "",				"重置缩放程度"
+Quick_Angle			= "旋转角度",			"设定显示的旋转角度"
+Quick_RotCCW			= "",				"逆顺时针旋转"
+Quick_RotCW			= "",				"顺时针旋转"
+Quick_RotReset			= "",				"重置旋转角度"
+Quick_InvertHorz		= "",				"水平翻转显示"
+Quick_StabilizeStk		= "笔画補正",			"设定笔画補正的強度"
+
+Quick_InvNormal			= "正常"
+Quick_InvInvert			= "翻转"
+
+Quick_AngleP000			= "+000°"
+Quick_AngleP045			= "+045°"
+Quick_AngleP090			= "+090°"
+Quick_AngleP135			= "+135°"
+Quick_AngleP180			= "+180°"
+Quick_AngleM135			= "-135°"
+Quick_AngleM090			= "-090°"
+Quick_AngleM045			= "-045°"
+
+;===================================================================================================
+;                                           Guides
+;===================================================================================================
+
+Guide_LayerThumb		= "点击缩图新增、追加、排除像素的不透明度选择范围：Ctrl+点击 … 產生 / Ctrl+Shift+点击 … 追加 / Ctrl+Alt+点击 … 排除"
+Guide_Swatch			= "Shift+点击 … 新增色票 / Ctrl+拖曳 … 移动色票 (拖曳到色盤外刪除色票) / 右拖曳 … 移动色票 / 右键点击 … 新增色票"
+Guide_CustomTools		= "Ctrl+拖曳 … 移动工具 / 右拖曳 … 移动、复制工具 / 右键点击 … 工具新增菜单 / 双击 … 工具设定"
+
+;===================================================================================================
+;                                     Custom tool tray
+;===================================================================================================
+
+CusToolMenu_Cancel		= "取消(&X)"
+CusToolMenu_Option		= "设定(&O)"
+CusToolMenu_Duplicate		= "复制(&D)"
+CusToolMenu_Remove		= "刪除(&R)"
+CusToolMenu_Move		= "移动(&M)"
+
+CusTool_IsDelete		= "确定刪掉这个工具吗？"
+CusTool_NotSpecify		= "无指定"
+
+;===================================================================================================
+;                                       Tool names
+;===================================================================================================
+
+Tool_Pencil			= "鉛笔"
+Tool_AirBrush			= "喷枪"
+Tool_Brush			= "笔刷"
+Tool_Water			= "水彩"
+Tool_Marker			= "麦克笔"
+Tool_Eraser			= "橡皮擦"
+Tool_SelPen			= "选取笔"
+Tool_SelErs			= "选取擦"
+Tool_LegacyPen			= "純色笔"
+Tool_Bucket			= "油漆桶"
+
+ToolInk_Pen			= "钢笔"
+ToolInk_Curve			= "曲线"
+ToolInk_Line			= "折线"
+ToolInk_White			= "修正"
+ToolInk_Param			= "粗細"
+ToolInk_Edit			= "节点"
+ToolInk_Pressure		= "笔压"
+ToolInk_Color			= "颜色"
+
+Tool_Marquee			= "选择范围操作"
+Tool_Lasso			= "选择范围套索"
+Tool_MagicWand			= "魔术棒"
+Tool_Magnify			= "显示缩放"
+Tool_Move			= "图层移动"
+Tool_Hand			= "拖曳画面"
+Tool_Syringe			= "吸取颜色"
+Tool_Rotate			= "旋转画布"
+
+;===================================================================================================
+;                                       Brush tool
+;===================================================================================================
+
+;				  UI strings			Tool-tips strings
+Brush_DrawMode			= "",				"选择塗色模式"
+Brush_EdgeType			= "",				"设定笔尖轮廓"
+Brush_SizeSc			= "",				"设定笔刷直径的滑桿的倍率"
+Brush_Size			= "最大直径",		"设定笔刷直径"
+Brush_MinSize			= "最小直径",			"设定笔压为0時的笔刷直径"
+Brush_Density			= "笔刷浓度",			"设定笔刷绘画的浓度"
+Brush_Type			= "",				"选择笔刷形狀"
+Brush_TypeVal			= "強度\t%d",			"形狀的參數设定（扩散的強度、刷毛粗細）"
+Brush_Tex			= "",				"选择應用到笔刷的材质"
+Brush_TexVal			= "強度\t%d",			"设定材质的影響強度"
+Brush_MixColor			= "混色程度",			"设定画笔用色和画布颜色的混合程度（數值越大混色越強）"
+Brush_Water			= "含水量",			"设定不透明度的上升程度（數值越大不透明度越難上升）"
+Brush_SpreadColor		= "抹色效果",			"设定混色時的塗抹效果（數值越大塗抹的距離越长）"
+Brush_SmoothingPrs		= "暈开",			"设定颜色暈开的笔压范围（笔压低于这个质的話只会造成颜色暈开）"
+Brush_KeepOpacity		= "維持不透明度",		"抹色時是否影響不透明度"
+Brush_Opacity			= "不透明度",			"设定笔刷的不透明度"
+Brush_Algorithm			= "处理方式",			"选择笔刷绘画的处理方式"
+Brush_SyringeMode		= "取色工具",			"选择取色工具的处理方式"
+Brush_SelectSize		= "",				"选择笔刷直径"
+Brush_AdvSetting		= "详细设定",			"显示／不显示详细设定"
+Brush_DrawQuality		= "绘画品质",			"设定在色彩增值混合模式時笔刷工具绘画的平滑程度"
+Brush_EdgeHardness		= "轮廓硬度",			"设定笔刷轮廓的反锯齿的強度"
+Brush_MinDensity		= "最小浓度",			"设定笔压为0時的笔刷浓度"
+Brush_DensitySens		= "最大浓度笔压",		"设定画出颜色最大浓度時的笔压"
+Brush_PressureSens		= "笔压 硬<->软",		"设定笔压的敏感程度"
+Brush_PrsAply			= "笔压：",			""
+Brush_PrsAplyDensity		= "浓度",			"讓笔压影響颜色浓淡"
+Brush_PrsAplySize		= "直径",			"讓笔压影響笔刷直径"
+Brush_PrsAplyMix		= "混色",			"讓比压影響混色效果（下笔越輕越容易混色，越用力越不会混色）"
+
+Brush_DrawQuality1		= "1 (速度优先)"
+Brush_DrawQuality4		= "4 (品质优先)"
+Brush_AlgoSimply		= "簡易 (无笔压)"
+Brush_AlgoPrecisely		= "高精度"
+Brush_SyringeNormal		= "正常"
+Brush_SyringeLayARGB		= "图层ARGB"
+
+DrawMode_Normal			= "正常"
+DrawMode_Multiply		= "色彩增值"
+DrawMode_Vivid			= "更明亮"
+DrawMode_Deep			= "更暗沉"
+
+BrushType_Circle		= "【普通圓形】"
+
+BrushTex_None			= "【无材质】"
+BrushTex_Paper			= "【图层质材】"
+
+;===================================================================================================
+;                                    Marquee / Move tool
+;===================================================================================================
+
+LayerMove_SelOpt		= "CTRL+左键点击选择图层",	"Ctrl+左键点击选取游标点到的图层 (预设Ctrl+Shift+左键点击)"
+LayerMove_DragDetect		= "最低拖曳有效距離",	""
+LayerMove_DragDist		= "\t±%dpix",				"设定移动時滑鼠最低需要拖动的距離"
+
+;===================================================================================================
+;                                       Marquee tool
+;===================================================================================================
+
+Transform_Transform		= "自由变形",				"任意操作图层或选择范围的大小、旋转、外型"
+Transform_Size			= "放大缩小",				"任意缩放图层或选择范围的大小"
+Transform_Free			= "任意扭曲",				"任意扭曲图层或选择范围的外型"
+Transform_Rotate		= "旋转",				"任意旋转图层或选择范围的角度"
+Transform_OK			= "确定",				"确定这次的画布变形"
+Transform_Cancel		= "取消",				"取消这次的画布变形"
+Transform_HQPreview		= "高画质預覽",			"操作变形动作時以高画质显示預覽"
+Transform_Perspective		= "遠近感",				"设定自由扭曲变形時，產生遠近感的透視景深程度"
+Transform_InvertHorz		= "水平翻转",				"图层或选择范围水平翻转"
+Transform_InvertVert		= "垂直翻转",				"图层或选择范围垂直翻转"
+Transform_RotateCCW		= "逆时针90度旋转",			"图层或选择范围逆时针90度旋转"
+Transform_RotateCW		= "顺时针90度旋转",			"图层或选择范围顺时针90度旋转"
+
+;===================================================================================================
+;                                       Lasso tool
+;===================================================================================================
+
+Lasso_AntiAlias			= "反锯齿",			"平滑处理选择范围边緣"
+
+;===================================================================================================
+;                                      Magic wand tool
+;===================================================================================================
+
+MagicWand_ScanMode		= "选择范围抽取模式：",			""
+MagicWand_ModeTransPrecise	= "透明部分(精确)",			"根据透明的部份精确的抽取选择范围"
+MagicWand_ModeTransRough	= "透明部分(模糊)",			"根据透明的部份模糊的抽取选择范围"
+MagicWand_ModeColorDiff		= "色差范围內的部分",			"根据色差范围內的抽取选择范围"
+MagicWand_ScanTarget		= "选择范围抽取來源：",			""
+MagicWand_TargetCurLayer	= "从编辑中的图层抽取",			"从编辑中的图层抽取选择范围"
+MagicWand_TargetSpecLayer	= "从指定的图层抽取",		"从被指定为來源的图层抽取选择范围"
+MagicWand_TargetCanvas		= "从整個画布抽取",				"从整個画布抽取选择范围"
+MagicWand_AntiAlias		= "反锯齿",			"平滑处理选择范围边緣"
+MagicWand_ThresTrans		= "透明程度\t±%d",		"设定可被視为选择范围的透明程度"
+MagicWand_ThresColor		= "色差范围\t±%d",			"设定可被視为边緣的色差程度"
+
+;===================================================================================================
+;                                       Magnify tool
+;===================================================================================================
+
+Magnify_ZoomIn			= "放大",				"点击左键放大显示"
+Magnify_ZoomOut			= "缩小",				"点击左键缩小显示"
+Magnify_DragZoom		= "拖曳缩放范围：",			""
+Magnify_DragZoomIn		= "放大模式時使用",			"放大模式時拖曳矩形选择的尺寸放大显示"
+Magnify_DragZoomOut		= "缩小模式時使用",			"缩小模式時拖曳矩形选择的尺寸放大显示"
+Magnify_DragDetect		= "最低拖曳有效距離",	""
+Magnify_DragDist		= "\t±%dpix",				"设定拖曳缩放范围時滑鼠最低需要拖放的距離"
+
+;===================================================================================================
+;                                        Rotate tool
+;===================================================================================================
+
+Rotate_Usage			= "以左键拖曳旋转画布\n"
+
+;===================================================================================================
+;                                         Hand tool
+;===================================================================================================
+
+Hand_Usage			= "以左键拖曳移动画面\n"
+
+;===================================================================================================
+;                                        Syringe tool
+;===================================================================================================
+
+;Syringe_Usage			= "以左键点击抓取颜色\n"
+;===================================================================================================
+;                           Control points edit tool (Line work layer)
+;===================================================================================================
+
+InkEdit_Usage1			= "笔画编辑功能"
+InkEdit_Usage2			= "其他线稿图层的工具也可以作相同的操作"
+InkEdit_Select			= "选取 / 解除",				"节点与曲线的选取或取消选取"
+InkEdit_Select1			= "(点击 节点/曲线)"
+InkEdit_Select2			= "(右键 - 取消全部选择)"
+InkEdit_MovCp			= "移动节点",				"移动节点，或在曲线上点击的新增节点"
+InkEdit_MovCp1			= "(Ctrl+拖曳节点 - 移动)"
+InkEdit_MovCp2			= "(Ctrl+拖曳曲线 - 新增节点)"
+InkEdit_MacSt			= "笔画变形",		"拖曳节点來调整笔画造型"
+InkEdit_MacSt1			= "(Shift+拖曳节点/曲线)"
+InkEdit_DelCp			= "刪除节点 / 曲线",			"刪除一個节点或曲线"
+InkEdit_DelCp1			= "(Alt+节点/点选曲线)"
+InkEdit_MacCp			= "造型节点 设定 / 解除",		"切换节点为普通节点或造型节点"
+InkEdit_MacCp1			= "(Shift+Alt+点选节点)"
+InkEdit_MovSt			= "移动笔画",			"移动笔画"
+InkEdit_MovSt1			= "(Shift+Alt+拖曳曲线)"
+InkEdit_DupSt			= "复制并移动笔画",			"复制并移动笔画"
+InkEdit_DupSt1			= "(Shift+Ctrl+拖曳曲线)"
+InkEdit_ConSt			= "連结笔画",			"将兩個笔画連结为一個"
+InkEdit_ConSt1			= "(Shift+Ctrl+节点間拖曳)"
+InkEdit_DelSt			= "刪除笔画",			"刪除笔画"
+InkEdit_DelSt1			= "(Shift+Ctrl+Alt+点选笔画)"
+InkEdit_AcuCp			= "銳角点 设定 / 解除",			"切换节点为銳角或圓角"
+InkEdit_AcuCp1			= "(Ctrl+Alt+点选节点)"
+
+;===================================================================================================
+;                              Pressure edit tool (Line work layer)
+;===================================================================================================
+
+InkPrs_Usage			= "欲调整各节点的笔压\n\n请从节点开始拖曳\n·向左減少笔压\n·向右增加笔压"
+
+;===================================================================================================
+;                              Color specify tool (Line work layer)
+;===================================================================================================
+
+InkCol_Usage			= "点选笔画并将其颜色变更为目前的主颜色"
+
+;===================================================================================================
+;                                   Dialog misc. strings
+;===================================================================================================
+
+CvNew_DefaultName		= "新的画布"
+CvNew_PresetSep			= "───────────────"
+
+JpegOpt_Original		= "原始图像"
+JpegOpt_Compressed		= "压缩结果"
+
+KeyCfg_None			= "无"
+
+OptWs_SizeRatio			= "最大推荐尺寸的比率：\n    %0.2f%% (%d × %d)"
+OptWs_SizeRecom			= "%d x %d (以主内存〔%dMB〕推算的结论)"
+
+OptTabBtn_Default		= "同驱动程序设定"
+OptTabBtn_LClick		= "点击左键"
+OptTabBtn_RClick		= "点击右键"
+OptTabBtn_LDblClick		= "左键双击"
+OptTabBtn_Eraser		= "橡皮擦"
+OptTabBtn_ShortcutKey		= "快速键"
+OptTabBtn_Disable		= "无效"
+
+OptTool_SyrSrcCanvas		= "显示的画布"
+OptTool_SyrSrcLayer		= "编辑中的图层"
+
+;===================================================================================================
+;                                           Warnings
+;===================================================================================================
+
+Warn_CloseCanvas		= "%s%s 尚未保存。\n要在关闭画布前保存吗？"
+Warn_CloseNotSAI		= "%s%s 尚未保存。这个画布的资料无法以指定的格式保存，\n若是要完整保存，请选择 *.sai 的格式。\n要在关闭之前以另外的名称保存吗？"
+Warn_ClosePSDLostInfo		= "%s%s 无法保存 SAI 專有的资料格式。\n若是要完整保存，请选择 *.sai 的格式。\n要在关闭之前以另外的名称保存吗？"
+Warn_CloseBMPLostInfo		= "%s%s 的图层结构无法保存\n若是要完整保存，请选择 *.sai 的格式。\n要在关闭之前以另外的名称保存吗？"
+Warn_OpenCanvas			= "该文件已开启，您确定要放弃目前编辑的结果，然后重新开启这个文件吗？"
+Warn_CanvasWorkMemory		= "%s\n因无法預留足夠的可用内存，无法保存为SAI以外的格式。"
+Warn_ToolCapability		= "不能在目前图层进行这项动作"
+Warn_LayerHidden		= "「%s」并不是显示的状态"
+Warn_LayerHiddenAll		= "所有的图层都隐藏起來了"
+Warn_ConflictKeyBind		= "欲指定的按键已经在使用中了，是否強制指定呢？\n\n%s"
+Warn_DiskSpace1			= "硬盘的剩余空間在200MB以下。请整理硬盘以騰出必要的空間。"
+Warn_DiskSpace2			= "硬盘的剩余空間在32MB以下，恐怕会损坏编辑的资料。"
+
+;===================================================================================================
+;                                           Errors
+;===================================================================================================
+
+Error_HelpNotFound		= "说明檔不存在"
+Error_DirOpen			= "文件夹不存在，或是无法存取"
+Error_FileNotFound		= "文件不存在"
+Error_DirNotFound		= "文件夹不存在"
+Error_DirCantSpecify		= "无法选择这个文件夹"
+Error_FileExisting		= "%s%s 已存在。\n要覆盖这个文件吗？"
+Error_ShellLink			= "无法开启这个捷徑的目标文件"
+Error_SaiFileVersion		= "这个文件必須用更新版本的 SAI 來开启"
+Error_PSDLaySize		= "不支援图层中有宽度或高度有超过16000px的PSD文件"
+Error_PSDMaxLayers		= "不支援图层超过256個的PSD文件"
+Error_PSDType			= "不支援8bitRGB模式以外的PSD文件"
+Error_PSDMaxChannels		= "不支援色頻超过8個的PSD文件"
+Error_FileNameNone		= "请指定文件名称"
+Error_CanvasSizeNeg		= "画布的宽度或高度低于 0"
+Error_CanvasSizeMax		= "画布的宽度或高度超过 10000 了"
+Error_CanvasSize		= "画布尺寸超过了最大尺寸。（%d×%d > %d×%d）。\n您可以从菜单[其他]→[选项]的[工作环境]頁籤中修改画布的最大尺寸。"
+
+Error_CanvasReso		= "分辨率请在 1～4800dpi 的范围內设定"
+Error_OpenCanvas		= "开启画布文件失敗"
+Error_SaveCanvas		= "保存画布文件失敗"
+Error_CreateCanvas		= "开新画布文件失敗"
+Error_CreateView		= "建立显示失敗"
+Error_CanvasWorkMemory		= "无法取得足夠的内存以供开启画布文件"
+Error_ToolWorkMemory		= "无法取得足夠的内存以供程序进行工作"
+Error_FilterMode		= "現在正在进行画布变形或滤镜，请先结束这些动作"
+Error_NoPixels			= "选择范围內是空白的"
+Error_NoStrokes			= "选择的笔画不存在"
+Error_TransformNoPix		= "欲处理的范围的內容是空白的"
+Error_TransformSize		= "欲进行变形的部份太大了"
+Error_Unknown			= "遇上了未知的程序错误 (0x%08X)"
+Error_AllocMemory		= "内存容量不足"
+Error_DeadLock			= "程序出错中止"
+Error_ReadFile			= "讀取文件失敗"
+Error_WriteFile			= "文件写入错误"
+Error_HisFileID			= "还原记录文件內的资料 ID 序列异常"
+Error_LayerID			= "图层 ID 异常"
+Error_StrokeID			= "笔画 ID 异常"
+Error_NoHisAction		= "还原记录并不存在"
+Error_MaxLayers			= "达到了（256）图层的上限"
+Error_Recover			= "编辑的动作被取消了"
+Error_DataCrash			= "因为系統错误的緣故，画布资料可能已经毀損"
+Error_UnFltdException		= "发生无法处理的异常"
+Error_MessageLoop		= "訊息迴圈被异常终止"
+Error_SetupOldVer		= "无法使用旧版本的 SAI 进行安裝\n请使用最新版本"
+Error_FatalError		= "%s 造成程序被強制关闭。\n"
+Error_EmergencySave		= "\n SAI 正在尝试还原以编辑的文件。\n各文件会在原存檔的位置或[我的文件]以別名被備份，\n備份時的文件名称请查看保存在与 sai.exe 同目錄的 errlog.txt 。\n\n再者，若错误是程序內部信息被破壞的情況，\n\n - 備份文件的动作可能会造成当機\n - 或是画布以损坏的状态被備份\n\n将導致无法恢復您的资料。\n實在抱歉，请諒解。"
+
+;===================================================================================================
+;                                        File viewer
+;===================================================================================================
+
+ExtFilter_Default		= "图像文件 (SAI/PSD/BMP/JPG/PNG/TGA)"
+
+FileView_TitleSave		= "保存画布"
+FileView_TitleOpen		= "开启画布"
+FileView_Folder			= "文件夹"
+FileView_Bookmark		= "书签"
+FileView_Path			= "路径："
+FileView_Name			= "文件名称："
+FileView_Type			= "文件类型："
+FileView_Save			= "保存"
+FileView_Open			= "开启画布"
+FileView_Cancel			= "取消"
+
+;				UI strings	Tool-tips strings
+FileView_BtnBkmNewFol		= "",		"建立书签"
+FileView_BtnBkmRename		= "",		"重新命名书签"
+FileView_BtnBkmDelete		= "",		"刪除书签"
+
+FileView_BtnParent		= "",		"往上一层文件夹移动"
+FileView_BtnReload		= "",		"重新整理"
+FileView_BtnAddBkm		= "",		"将目前的文件夹设定为书签"
+FileView_BtnNewFol		= "",		"建立文件夹"
+FileView_BtnRename		= "",		"重新命名文件或文件夹"
+FileView_BtnDelete		= "",		"刪除文件或文件夹"
+
+FileView_ThumbCancel		= "取消 (&X)"
+FileView_ThumbModeThumb		= "缩图显示 (&T)"
+FileView_ThumbModeDetail	= "详细资料 (&D)"
+FileView_ThumbSortByName	= "以文件名排列 (&N)"
+FileView_ThumbSortByExt		= "以类型排列 (&E)"
+FileView_ThumbSortByTime	= "以日期排列 (&L)"
+FileView_ThumbSortByExtTime	= "以类型与日期排列 (&M)"
+FileView_ThumbNewFol		= "建立文件夹 (&F)"
+FileView_ThumbDelete		= "刪除 (&D)"
+FileView_ThumbRename		= "重新命名 (&M)"
+FileView_ThumbUpdate		= "更新缩图 (&U)"
+FileView_ThumbUpdateAll		= "更新全部缩图 (&A)"
+
+FileView_DlgFolder		= "建立文件夹"
+FileView_DlgBkmAdd		= "新增书签"
+FileView_DlgBkmFolder		= "建立书签"
+FileView_DlgBkmRename		= "重新命名书签"
+FileView_AskBkmDelete		= "要刪除所选取的书签吗？"
+
+DlgRename_Name			= "名称"
+DlgRename_Ok			= "确定"
+DlgRename_Cancel		= "取消"
+
+;===================================================================================================
+;                                        Setup dialog
+;===================================================================================================
+
+DlgAskSetup_Title		= "SAI - Setup"
+DlgAskSetup_Guide		= "即将进行 SAI 的安裝动作。程序会掃描系統來尋找较旧版本的 SAI 。这些动作通常數十秒之內就可以完成，但是根据系統环境的差別，也有需要耗費數分鐘的可能性。 \n\n 准备好要安裝 SAI 了吗？"
+DlgAskSetup_Ok			= "确定"
+DlgAskSetup_Cancel		= "取消"
+
+DlgSetup_Title			= "SAI - 进行设定安裝"
+DlgSetup_Cancel			= "终止"
+
+;===================================================================================================
+;                                      System ID dialog
+;===================================================================================================
+
+DlgSysID_Title			= "SAI - 系統 ID"
+DlgSysID_SysID			= "系統 ID"
+DlgSysID_Ok			= "确定"
+
+;===================================================================================================
+;                                      Error logs dialog
+;===================================================================================================
+
+DlgError_Title			= "错误記錄"
+
+;===================================================================================================
+;                                      New canvas dialog
+;===================================================================================================
+
+DlgCvNew_Title			= "建立新画布"
+DlgCvNew_Name			= "文件名称："
+DlgCvNew_Preset			= "预设尺寸："
+DlgCvNew_W			= "宽度："
+DlgCvNew_H			= "高度："
+DlgCvNew_Res			= "分辨率："
+DlgCvNew_InfoGrp		= "尺寸信息"
+DlgCvNew_Info			= "画布尺寸：\n宽度上限：\n高度上限："
+DlgCvNew_Ok			= "确定"
+DlgCvNew_Cancel			= "取消"
+
+;===================================================================================================
+;                                 Canvas resolution dialog
+;===================================================================================================
+
+DlgCvReso_Title			= "改变画布尺寸"
+DlgCvReso_Cx			= "水平像素："
+DlgCvReso_Cy			= "垂直像素："
+DlgCvReso_W			= "宽度："
+DlgCvReso_H			= "高度："
+DlgCvReso_Res			= "分辨率："
+DlgCvReso_FixSzRetio		= "锁定长宽比"
+DlgCvReso_FixPixels		= "锁定像素值"
+DlgCvReso_InfoGrp		= "尺寸信息"
+DlgCvReso_Info			= "修改前：\n修改后：\n宽度的上限：\n高度的上限："
+DlgCvReso_Ok			= "确定"
+DlgCvReso_Cancel		= "取消"
+
+;===================================================================================================
+;                                   Canvas size dialog
+;===================================================================================================
+
+DlgCvSize_Title			= "改变画布版型"
+DlgCvSize_Ok			= "确定"
+DlgCvSize_Cancel		= "取消"
+
+DlgCvSize1_Title		= "指定尺寸"
+DlgCvSize1_W			= "宽度："
+DlgCvSize1_H			= "高度："
+DlgCvSize1_Pos			= "定位："
+
+DlgCvSize2_Title		= "延长尺寸"
+DlgCvSize2_Guide		= "请输入上下左右各延长的數值，若要內缩則输入負數。"
+DlgCvSize2_T			= "上"
+DlgCvSize2_B			= "下"
+DlgCvSize2_L			= "左"
+DlgCvSize2_R			= "右"
+
+;===================================================================================================
+;                                   Layer name dialog
+;===================================================================================================
+
+DlgLayProp_Title		= "图层名称"
+DlgLayProp_Name			= "图层名称："
+DlgLayProp_Ok			= "确定"
+DlgLayProp_Cancel		= "取消"
+
+;===================================================================================================
+;                                Custom tool tray dialog
+;===================================================================================================
+
+DlgCustom_Title			= "自定工具设定"
+DlgCustom_Name			= "工具名："
+DlgCustom_NameDesc		= "（半形英數 6 字，或全形 3 字）"
+DlgCustom_Etc			= "其他："
+DlgCustom_EtcDesc		= "（显示在工具名称下）"
+DlgCustom_StbStk		= "笔画補正："
+DlgCustom_StbStkDesc		= "（單獨设定该工具笔画補正程度）"
+DlgCustom_StbPrs		= "笔压補正："
+DlgCustom_StbPrsDesc		= "（單獨设定该工具笔画補正程度）"
+DlgCustom_Key			= "快速键："
+DlgCustom_Ok			= "确定"
+DlgCustom_Cancel		= "取消"
+
+;===================================================================================================
+;                                 Common tool box dialog
+;===================================================================================================
+
+DlgTool_Title			= "工具设定"
+DlgTool_Key			= "快速键："
+DlgTool_Ok			= "确定"
+DlgTool_Cancel			= "取消"
+
+;===================================================================================================
+;                                  View selector dialog
+;===================================================================================================
+
+DlgView_Title			= "选择显示画面"
+DlgView_Ok			= "确定"
+DlgView_Cancel			= "取消"
+
+;===================================================================================================
+;                       Hue / Saturation / Luminescence filter dialog
+;===================================================================================================
+
+DlgLayHSV_Title			= "色相/飽和度"
+DlgLayHSV_Hue			= "色相"
+DlgLayHSV_Sat			= "飽和度"
+DlgLayHSV_Lum			= "明度"
+DlgLayHSV_Preview		= "預覽"
+DlgLayHSV_Ok			= "确定"
+DlgLayHSV_Cancel		= "取消"
+
+;===================================================================================================
+;                           Contrast / Luminescence filter dialog
+;===================================================================================================
+
+DlgLayCon_Title			= "亮度/對比"
+DlgLayCon_Lum			= "亮度"
+DlgLayCon_Con			= "對比"
+DlgLayCon_Dep			= "色彩浓度"
+DlgLayCon_Preview		= "預覽"
+DlgLayCon_Ok			= "确定"
+DlgLayCon_Cancel		= "取消"
+
+;===================================================================================================
+;                             *.PSD overwrite warning dialog
+;===================================================================================================
+
+DlgWarnPSD_Title		= "覆盖 PSD 檔時的注意事项"
+DlgWarnPSD_Notice		= "其他繪图软件產生的PSD文件在經过 SAI 编辑并保存的情況下，SAI不支援的资料（如文字图层和调整图层等）将会遺失。\n\n你确定要保存吗？"
+DlgWarnPSD_Ok			= "保存"
+DlgWarnPSD_Cancel		= "取消"
+
+;===================================================================================================
+;                                    JPEG save dialog
+;===================================================================================================
+
+DlgJpgSave_Title		= "JPEG保存"
+DlgJpgSave_Ok			= "确定"
+DlgJpgSave_Cancel		= "取消"
+
+DlgJpgOpt_Quality		= "压缩品质"
+DlgJpgOpt_Detail		= "详细设定"
+DlgJpgOpt_QY			= "明度成份品质"
+DlgJpgOpt_QC			= "颜色成份品质"
+DlgJpgOpt_DownSample		= "颜色成分取樣"
+DlgJpgOpt_Horz			= "水平方向"
+DlgJpgOpt_Vert			= "垂直方向"
+DlgJpgOpt_Info			= "画布尺寸：\n文件大小：\n压缩率："
+
+;===================================================================================================
+;                            Shortcut key configuration dialog
+;===================================================================================================
+
+DlgKeyCfg_Title			= "设定快速键"
+DlgKeyCfg_Ok			= "确定"
+DlgKeyCfg_Cancel		= "取消"
+
+;===================================================================================================
+;                                    Option dialog
+;===================================================================================================
+
+DlgOption_Title			= "选项"
+DlgOption_Ok			= "确定"
+DlgOption_Cancel		= "取消"
+
+;===================================================================================================
+;                             Working set tab (Option dialog)
+;===================================================================================================
+
+DlgOptWs_Title			= "工作环境"
+DlgOptWs_SizeGrp		= "最大版面尺寸"
+DlgOptWs_SizeW			= "宽度："
+DlgOptWs_SizeH			= "高度："
+DlgOptWs_SizeGuide		= "请设定开新画布允許的最大尺寸，上限为 10000 。程序将根据这裡的设定保留内存，并限制建立画布或改变尺寸時的大小。但设定的數值若超过推荐的最大尺寸，将不能保證程序的正常運作。"
+DlgOptWs_SizeRecom		= "推荐最大尺寸："
+DlgOptWs_SizeNotice		= "※ 此頁的设定会在下次启动 SAI 之后生效"
+DlgOptWs_TempGrp		= "暫存文件夹"
+DlgOptWs_TempDesc		= "请设定暫存文件夹的位置。建議为其他软件不使用的文件夹，请別忘記在路径尾端加上斜线。此處若不设定，則会使用 sai.exe 所在的文件夹为暫存文件夹。"
+DlgOptWs_TempDir		= "暫存文件夹路径"
+
+;===================================================================================================
+;                               Tablet tab (Option dialog)
+;===================================================================================================
+
+DlgOptTab_Title			= "數位板"
+DlgOptTab_PrsGrp		= "最小笔压"
+DlgOptTab_PrsDesc		= "当笔尖点击出現点击变成双击的情況下请在这裡设定。另在數位板驱动程序裡设定的最小笔压在本程序无效。"
+DlgOptTab_PrsMin		= "視为点击的最小笔压（0～100%）："
+DlgOptTab_ModeGrp		= "座标模式"
+DlgOptTab_ModeDesc		= "在數位板驱动程序设定的滑鼠模式会被忽略。无论你用滑鼠模式還是画笔模式也请在此设定。"
+DlgOptTab_ModeAbs		= "画笔模式"
+DlgOptTab_ModeRel		= "滑鼠模式"
+DlgOptTab_ModeSpeed		= "移动速度："
+DlgOptTab_BtnGrp		= "按键设定"
+DlgOptTab_BtnDesc		= "在數位板驱动程序的按键设定无效時请在此设定。该情況下，需要把數位板驱动程序方面的按键设定为[预设值]。"
+DlgOptTab_BtnErs		= "橡皮擦："
+DlgOptTab_BtnSW2		= "尾端側边按键："
+DlgOptTab_BtnSW1		= "笔尖端側边按键："
+
+;===================================================================================================
+;                               Tool tab (Option dialog)
+;===================================================================================================
+
+DlgOptTool_Title		= "工具"
+DlgOptTool_TsGrp		= "工具暫切（按著快速键暫時切换工具）"
+DlgOptTool_TsEnable		= "使用工具暫切"
+DlgOptTool_TsForce		= "如果快速键按下時已开始下笔也被視为工具暫切"
+DlgOptTool_TsAccept		= "到判定为工具暫切为止的按键時間（ms）："
+DlgOptTool_CtrlGrp		= "CTRL系操作"
+DlgOptTool_CtrlLayMov		= "使用CTRL系快速键后禁止移动图层的時間（ms）："
+DlgOptTool_SyrGrp		= "吸管工具"
+DlgOptTool_SyrSrc		= "滑鼠右键或Alt+点击取色時的目标："
