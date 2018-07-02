@@ -1,43 +1,72 @@
+// Learn cc.Class:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
+// Learn Attribute:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
+// Learn life-cycle callbacks:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
+
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        rope: {
-            type : cc.Node,
-            default : null,
-        },
-        hook: {
-            type:cc.Node,
-            default :null,
-        }
+
     },
 
-    // use this for initialization
-    onLoad: function () {
-        //记录绳子初始位置
-        this.startPos = this.rope.position;
-        //绳子摇摆动作
-        this.shakeAction = cc.repeatForever(cc.sequence(cc.rotateTo(3,60),cc.rotateTo(3,-60)));
-        //绳子收回动作，绳子收回后执行摇摆动作
-        this.returnAction = cc.sequence(cc.moveTo(3,this.startPos),cc.callFunc(function() {
-                this.rope.runAction(this.shakeAction);
-        }, this));
-        //绳子左右摇摆
-        this.rope.runAction(this.shakeAction);
+    // LIFE-CYCLE CALLBACKS:
 
-        var self = this;
-        this.node.on('touchstart',function(){
-            self.rope.stopAllActions();
-            //绳子伸长动作，根据角度动态计算
-            self.rope.runAction(cc.moveBy(3,-200*Math.tan(Math.PI/180*this.rope.rotation),-200));
-        },this);
-        this.node.on('touchend',function(){
-            self.rope.runAction(self.returnAction);
-        },this);
+    onLoad() {
+        //监听碰撞
+        this.onCollisionEnter = this.onCollisionEnterA;
+        //this.Canvas = cc.find('Canvas');
+        this.game = cc.find('Canvas').getComponent('game');
+
     },
 
-    // called every frame
-    update: function (dt) {
+    onCollisionEnterA(other, self) {
+        console.log('碰撞检测=========');
+        //if (self.game.GameStatus == 2) return;
+        this.other = other;
+        this.isWall = this.Wall(other);
+        this.isGlod = this.Glod(other);
+        this.isStone = this.Stone(other);
+        //处理钩子撞墙
+        if (this.isWall || this.isGlod || this.isStone) {
+            if (this.isWall) {
+                cc.log('碰撞墙===============================');
+            } else if (this.isGlod) {
+                cc.log('碰撞金矿===============================');
+                //将物品放置钩子上
+                cc.log('抓住===================');
+                cc.log(this.other.node.x, this.other.node.y);
+                other.node.parent = this.game.point;
+                this.other.node.y = this.game.hook.y -130
+                this.other.node.x = this.game.hook.x -30
+                // this.other.node.y = -(this.game.hook.height + 2);
+                // this.other.node.x = -(this.game.hook.width / 2);
 
+                other.node.anchorY = 1.0;
+                cc.log(this.other.node.x, this.other.node.y);
+            } else if (this.isStone) {
+                cc.log('碰撞石头===============================');
+
+            }
+
+            this.node.parent.parent.parent.emit('Collision', {});
+            return;
+        };
+
+
+    },
+    Wall(other) {
+        return other.node.group == 'wall';
+    },
+    Glod(other) {
+        return other.node.group == 'glod';
+    },
+    Stone(other) {
+        return other.node.group == 'stone';
     },
 });
