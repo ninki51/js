@@ -21,6 +21,8 @@ cc.Class({
         // this.glod_2 = cc.find('Canvas/bg/move_layer/glod_2').getComponent(cc.Sprite)
         // this.glod_3 = cc.find('Canvas/bg/move_layer/glod_3').getComponent(cc.Sprite)
         //cc.log(this.glod_1)
+        //脱落概率
+        this.rate = 0.3
     },
 
     start() {
@@ -40,16 +42,26 @@ cc.Class({
         } else if (this.isGlod) {
             cc.log('碰撞金矿===============================')
             let glod = other.getComponent(other.node.name)
-            glod.status = 0
-            //根据物品设置拉回钩子速度
-            this.main.SetSpeed(glod.pollSpeed)
-            // let xy = this.node.convertToNodeSpaceAR(this.temp)
-            // cc.log(xy.x,xy.y)
-            other.node.x = -this.rope.width * 0.5
-            other.node.y = this.temp.y + this.rope.y + this.rope.parent.y + this.rope.parent.parent.y + this.rope.parent.parent.parent.y + other.node.height + 10
-
-            other.node.parent = this.temp
-            other.node.anchorY = 1.0
+            let rnd = Math.random() * 100
+            if (rnd < this.rate * 100){
+                //金块脱落
+                cc.log('金块脱落=============')
+                glod.status = 2
+            }else{
+                glod.status = 0
+                //根据物品设置拉回钩子速度
+                this.main.SetSpeed(glod.pollSpeed)
+                // let xy = this.node.convertToNodeSpaceAR(this.temp)
+                // cc.log(xy.x,xy.y)
+                //other.node.x = -this.rope.width * 0.5
+                other.node.parent = this.temp
+                other.node.anchorY = 1.0
+                other.node.x = 0
+                other.node.y = 10
+    
+                
+            }
+           
             cc.find('Canvas').emit('Collision', { catch: 1 })
         }
 
